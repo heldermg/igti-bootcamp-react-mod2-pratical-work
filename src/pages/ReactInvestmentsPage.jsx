@@ -7,7 +7,7 @@ import Investment from '../components/Investment'
 
 export default function ReactInvestmentsPage() {
   return (
-    <div>
+    <>
       <Header>react-investments v1.0</Header>
       <Main>
         <Investments>
@@ -16,6 +16,6 @@ export default function ReactInvestmentsPage() {
           })}
         </Investments>
       </Main>
-    </div>
+    </>
   )
 }
