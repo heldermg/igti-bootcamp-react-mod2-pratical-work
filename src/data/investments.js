@@ -1,4 +1,4 @@
-export const INVESTMENT_FUNDS = [
+export const INVESTMENTS = [
   {
     id: '3176856a-82cf-4ce9-8803-c65107c7ad5e',
     description: 'Fundo de Ações',
@@ -29,7 +29,7 @@ export const INVESTMENT_FUNDS = [
   },
 ];
 
-export const FUNDS_REPORTS = [
+export const INVESTMENTS_REPORTS = [
   {
     id: '014c4220-df90-4a43-b809-657941b53770',
     investmentId: 'b21cbd7d-f4ae-4ff1-b015-c76b9c264a1a',
