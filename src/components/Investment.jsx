@@ -3,13 +3,14 @@ import { currencyNumberFormat, percentNumberFormat } from '../util/util'
 import { INVESTMENTS_REPORTS as allReports } from '../data/investments'
 
 export default function Investment({ children: investment = null }) {
+
   if (!investment) {
     return <div>Impossible to show the Investment</div>
   }
 
   const investmentReport = allReports
     .filter(({ investmentId }) => investmentId === investment.id)
-    .sort((a, b) => a.month - b.month)
+    .sort((report1, report2) => report1.month - report2.month)
    
   let prevValue = 0
   investmentReport.forEach((report) => {
@@ -31,12 +32,12 @@ export default function Investment({ children: investment = null }) {
      .format(Number(totalYieldValue / firstValue).toFixed(4))
 
   let totalYieldClass = ''
-     if (totalYieldValue < 0) {
-      totalYieldClass = 'text-red-600'
+  if (totalYieldValue < 0) {
+    totalYieldClass = 'text-red-600'
    
-     } else if (totalYieldValue > 0) {
-      totalYieldClass = 'text-green-600'
-     }
+  } else if (totalYieldValue > 0) {
+    totalYieldClass = 'text-green-600'
+  }
 
   return (
     <div className="font-sans border p-2 m-2 flex flex-col space-y-4 items-center space-x-2">
