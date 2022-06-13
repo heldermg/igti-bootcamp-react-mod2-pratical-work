@@ -1,8 +1,8 @@
 export default function Header({ children, size }) {
-  let fontSize = 'text-xl';
+  let fontSize = 'text-xl'
 
   if (size === 'large') {
-    fontSize = 'text-2xl';
+    fontSize = 'text-2xl'
   }
 
   return (
@@ -11,5 +11,5 @@ export default function Header({ children, size }) {
         <h1 className={`text-center font-semibold ${fontSize}`}>{children}</h1>
       </div>
     </header>
-  );
+  )
 }

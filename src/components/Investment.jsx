@@ -47,7 +47,7 @@ export default function Investment({ children: investment = null }) {
         <span className={`${totalYieldClass}`}> {totalYieldValueFormated} ({totalYieldPercentage})</span>
       </h2>
       {investReports.map((report) => {
-         return <Report key={report.id}>{report}</Report>;
+         return <Report key={report.id}>{report}</Report>
       })}
     </div>
   )
