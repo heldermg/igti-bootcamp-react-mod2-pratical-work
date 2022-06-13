@@ -8,12 +8,12 @@ export default function Investment({ children: investment = null }) {
     return <div>Impossible to show the Investment</div>
   }
 
-  const investmentReport = allReports
+  const investReports = allReports
     .filter(({ investmentId }) => investmentId === investment.id)
     .sort((report1, report2) => report1.month - report2.month)
    
   let prevValue = 0
-  investmentReport.forEach((report) => {
+  investReports.forEach((report) => {
     report.monthYield =
       prevValue !== 0
         ? (report.value - prevValue) / prevValue
@@ -21,8 +21,8 @@ export default function Investment({ children: investment = null }) {
       prevValue = report.value
   })
 
-  const firstValue = investmentReport[0].value
-  const lastValue = investmentReport[investmentReport.length - 1].value
+  const firstValue = investReports[0].value
+  const lastValue = investReports[investReports.length - 1].value
   const totalYieldValue = lastValue - firstValue
 
   const totalYieldValueFormated = currencyNumberFormat
@@ -46,7 +46,7 @@ export default function Investment({ children: investment = null }) {
         <strong>Total yield:</strong>
         <span className={`${totalYieldClass}`}> {totalYieldValueFormated} ({totalYieldPercentage})</span>
       </h2>
-      {investmentReport.map((report) => {
+      {investReports.map((report) => {
          return <Report key={report.id}>{report}</Report>;
       })}
     </div>
